@@ -1,0 +1,101 @@
+BASE DE DATOS II
+
+CLASE: SÁBADO 22 DE SEPTIEMBRE 2018
+
+QUE ES UN CURSOR
+Es una sentencia SQL pero especialmente la sentencia SELECT.
+
+PARA QUE SIRVEN
+Congelan las sentencias y podemos ir operando en ellas antes de que terminen su ejecución.
+
+DE CUANTOS TIPOS EXISTEN
+A. Cursor implicito --> Este solo regresa una fila.
+
+B. Cursor explicito --> Este regresa multiples filas.
+
+NOTA: UN RURSOR OPTIMISA LOS SELECT ESÉCOAÑ,EMTE EM JOINS ES PREFERIBÑE USAR CURSORES.
+
+EJERCICIO 1 CURSORES IMPLICITOS
+
+1. Generar la siguiente tabla:
+	EMPLEADO
+	 id intiger pk
+	 nombre varchar2(80)
+	 sueldo_base float
+
+2. Guardar los siguientes registros
+id	nombre		sueldo_base
+1	ana		400
+2	juan		350
+3	pedro		600
+4	luis		520
+
+3. CREAR UN CURSOR IMPLICITO USANDO UN BLOQUE PL-SQL QUE NOS DE EL NUMERO DE REGISTROS DE LA TABLA EMPLEADOS.
+
+NOTA: LOS CURSORES IMPLICITOS SE USAN PARA AUTO INCREMENTAR UN PRIMARY KEY, YA QUE EN ORACLE "NO EXISTE EL AUNTO INCREMENTACIÓN". PORQUE ORACLE SABE QUE ESTE AUNTO INCREMENTABLE BAJA EL DESEMPEÑO (PERFORMAS) DE LAS BASE DE DATOS.
+
+**************** SCRIP ****************
+
+/*
+CLASE 22 SEP 2018
+
+CURSORES
+
+*/
+
+SET SERVEROUTPUT ON;
+
+--1. GENERAR LA SIGUIENTE TABLA
+CREATE TABLE empleados(ID INTEGER PRIMARY KEY, 
+                       Nombre VARCHAR2(80),
+                       Sueldo_Base FLOAT);
+--2. GUARDAR LOS SIGUIENTES REGISTROS
+INSERT INTO empleados VALUES(1,'Ana',400);
+INSERT INTO empleados VALUES(2,'Juan',350);
+INSERT INTO empleados VALUES(3,'Pedro',600);
+INSERT INTO empleados VALUES(4,'Luis',520);
+
+--MOSTRAR TODA LA TABLA
+SELECT * FROM empleados;
+
+--3. CREAR UN CURSOR IMPLICITO (ES UNA SOLA OCURRENCIA)
+DECLARE
+NUM_EMPLEADOS INTEGER;
+BEGIN
+--EL SIGUIENTE ES EL CURSOR
+SELECT COUNT(*) INTO NUM_EMPLEADOS FROM empleados;
+DBMS_OUTPUT.PUT_LINE('LOS EMPLEADOS SON ' || NUM_EMPLEADOS);
+END;
+/
+
+-------------------------------------------------------------
+
+PROYECTO: https://github.com/daton/bd2
+
+Un proyecto de yomcat tiene 3 carpetas
+1. Web pages --> todo lo de las paginas html (imagnes,audio, video)
+2. Source packages --> contiene codigos fuentes:
+			com.jc.modelo --> invoca todos los procedimientos, las operaciones se respaldan con procedimientos.
+PATRONES DE DISEÑO: Modelo, plantilla.
+Convinaciones:
+PHP --> MYSQL
+JAVA <--> MY SQL <--> ORACLE
+JAVA --> ORACLE ** SE USARA EN EL PROYECTO
+SQL SERVER --> C#
+			com.jc.oracle -->
+3.
+
+
+*************************************************************
+
+TAREA PARA LA SIGUIENTE CLASE:
+
+ ----(1/8 de papel cascaron se se hara un diagrama asta el final)----
+
+MVC --> Investigar 
+
+*************************************************************
+
+
+-------------------------------------------------------------
+SIGUIENTE CLASE: CURSORES IMPLICITOS EN EL CASO DE AUTO INCREMENTABLE EN PK
