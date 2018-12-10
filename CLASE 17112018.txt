@@ -1,0 +1,15 @@
+Continuacon con el proyecto
+
+https://github.com/daton/bd2
+
+EL PRYECTO ACTUALIZADO ESTA EN LA MEMORIA NEGRA
+
+NOTA: En una auttenticacion el metodo de envio del formulario por seguridad siempre deber ser el post.
+
+forward --> de donde esta a donde quiere llegar
+
+RequestDispatcher --> ocualta las paginas y las protege
+
+"pages/index.html"--> routing de paginas,  que se direccionen internamente y el cliente no pueda ver la informacion
+
+TAREA: DESARROLLAR UNA PAGINA DE error.html
